@@ -619,40 +619,40 @@
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="content-right">
-                            <form action="#" class="contact-form" id="contact-form" method="post">
-                                <div class="row">
-                                    <div class="col">
-                                        <div id="first-name-field">
-                                            <input type="text" placeholder="First Name" class="form-control" name="form-name">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div id="last-name-field">
-                                            <input type="text" placeholder="Last Name" class="form-control" name="form-name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div id="email-field">
-                                            <input type="email" placeholder="Email Address" class="form-control" name="form-email">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div id="subject-field">
-                                            <input type="text" placeholder="Subject" class="form-control" name="form-subject">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div id="message-field">
-                                            <textarea cols="30" rows="5" class="form-control" id="form-message" name="form-message" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="button" type="submit" id="submit" name="submit">Send Message</button>
-                            </form>
+                            <form action="https://formspree.io/f/xnpaogdl" class="contact-form" id="contact-form" method="POST">
+    <div class="row">
+        <div class="col">
+            <div id="first-name-field">
+                <input type="text" placeholder="First Name" class="form-control" name="first_name" required>
+            </div>
+        </div>
+        <div class="col">
+            <div id="last-name-field">
+                <input type="text" placeholder="Last Name" class="form-control" name="last_name" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="email-field">
+                <input type="email" placeholder="Email Address" class="form-control" name="email" required>
+            </div>
+        </div>
+        <div class="col">
+            <div id="subject-field">
+                <input type="text" placeholder="Subject" class="form-control" name="subject" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="message-field">
+                <textarea cols="30" rows="5" class="form-control" id="form-message" name="message" placeholder="Message" required></textarea>
+            </div>
+        </div>
+    </div>
+    <button class="button" type="submit" id="submit" name="submit">Send Message</button>
+</form>
                         </div>
                     </div>
                 </div>
@@ -715,6 +715,62 @@
       retina_detect: true
     });
   </script>
+
+  <!-- SweetAlert2 CDN Library for Modern Popups -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Default redirect roko
+
+    const form = event.target;
+    const submitBtn = document.getElementById('submit');
+    const originalBtnText = submitBtn.innerText;
+
+    // Button state update karein
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Success Popup Display
+            Swal.fire({
+                icon: 'success',
+                title: 'Message Sent!',
+                text: 'Thank you for reaching out. I will get back to you soon.',
+                confirmButtonColor: '#ff7b00',
+                background: '#1f1f1f',
+                color: '#ffffff'
+            });
+
+            form.reset(); // Form clear kar dega
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        // Error Popup Display
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong! Please try again later.',
+            confirmButtonColor: '#d33',
+            background: '#1f1f1f',
+            color: '#ffffff'
+        });
+    } finally {
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+    }
+});
+</script>
 
 
 
