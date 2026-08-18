@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
  
@@ -102,7 +103,7 @@
                             <div class="intro-caption">
                                 <span>I am Abhishek Nishad</span>
                                 <h2>Full Stack Developer </h2>
-                                <button class="button">Contact Me</button>
+                                <button class="button">Download Resume</button>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -359,174 +360,196 @@
 
     <!-- portfolio -->
     <div id="portfolio" class="portfolio segments">
-        <div class="container">
-            <div class="box-content">
-                <div class="section-title">
-                    <h3>My Project</h3>
-                </div>
-                <div class="portfolio-filter-menu">
-                    <ul>
-                        <li data-filter="all" class="active">
-                            <span>See All</span>
-                        </li>
-                        <li data-filter="1">
-                            <span>JavaScript</span>
-                        </li>
-                        <li data-filter="2">
-                            <span>MERN</span>
-                        </li>
-                        <li data-filter="3">
-                            <span>Python</span>
-                        </li>
-                        <li data-filter="3">
-                            <span>AI</span>
-                        </li>
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="box-content">
+            <div class="section-title">
+                <h3>My Project</h3>
+            </div>
+            <div class="portfolio-filter-menu">
+                <ul>
+                    <li data-filter="all" class="active">
+                        <span>See All</span>
+                    </li>
+                    <li data-filter="1">
+                        <span>JavaScript</span>
+                    </li>
+                    <li data-filter="2">
+                        <span>MERN</span>
+                    </li>
+                    <li data-filter="3">
+                        <span>Python</span>
+                    </li>
+                    <li data-filter="4">
+                        <span>AI</span>
+                    </li>
+                </ul>
+            </div>
 
-                <div class="row no-gutters filtr-container">
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3">
-                        <div class="content-image">
+            <div class="row no-gutters filtr-container">
+
+                <!-- Card 1 (Video) -->
+                <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3">
+                    <div class="content-image">
+                        <!-- Click karne par Popup me video open hoga -->
+                        <a href="images/traffic_congs.mp4" class="portfolio-popup mfp-iframe">
+                            <video class="portfolio-video" autoplay muted loop playsinline>
+                                <source src="images/traffic_congs.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
                         
-                            <a href="images/alok.jpg" class="portfolio-popup">
-                                <img src="images/alok.jpg" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Classic Minimalist Door</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Graphic Design</span>
-                                    </div>
-                                </div>
-                            </a>
-                        
-                        <div class="project-links">
-                            <a href="#"  class="glass-btn"><i class="fa fa-github"></i>View Code</a>
-                            <a href="#"  class="glass-btn live">
-                                <i class="fa fa-external-link"></i>Live Demo
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1">
-                    <div class="content-video">
-                        <a href="video/a.mp4" class="portfolio-popup">
-                        <video class="portfolio-video" autoplay muted loop playsinline>
-                        <source src="images/a.mp4" type="video/mp4">
-                          Your browser does not support the video tag.
-                        </video>
-                          <div class="image-overlay"></div>
-                         <div class="portfolio-caption">
-                            <div class="title">
-                              <h4>Green Succulent Plants</h4>
-                           </div>
-                           <div class="subtitle">
-                               <span>Nature Plant</span>
-                              </div>
-                                 </div></a>
-                                 <div class="project-links">
-                            <a href="#"  class="glass-btn"><i class="fa fa-github"></i>View Code</a>
-                            <a href="#"  class="glass-btn live">
-                                <i class="fa fa-external-link"></i>Live Demo
-                            </a>
-                        </div>
-
-                    </div>
-
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="2, 1">
-                        <div class="content-image">
-                            <a href="images/portfolio3.jpg" class="portfolio-popup">
-                                <img src="images/portfolio3.jpg" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Yellow Rose Pale Plant</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Flower Plant</span>
-                                    </div>
-                                </div>
-                            </a>
+                        <!-- Overlay Text + Buttons -->
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-caption">
+                                <h4 class="title">traffic-congestion-detector</h4>
+                                <span class="subtitle">Project Demo</span>
+                            </div>
                             <div class="project-links">
-                            <a href="#"  class="glass-btn"><i class="fa fa-github"></i>View Code</a>
-                            <a href="#"  class="glass-btn live">
-                                <i class="fa fa-external-link"></i>Live Demo
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3">
-                        <div class="content-image">
-                            <a href="images/portfolio4.jpg" class="portfolio-popup">
-                                <img src="images/portfolio4.jpg" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Succulent Plant in Pot</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Plant House</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="project-links">
-                            <a href="#"  class="glass-btn"><i class="fa fa-github"></i>View Code</a>
-                            <a href="#"  class="glass-btn live">
-                                <i class="fa fa-external-link"></i>Live Demo
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1, 2">
-                        <div class="content-image">
-                            <a href="images/portfolio5.jpg" class="portfolio-popup">
-                                <img src="images/portfolio5.jpg" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Photo of Green Cactus</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Plant House</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="project-links">
-                            <a href="#"  class="glass-btn"><i class="fa fa-github"></i>View Code</a>
-                            <a href="#"  class="glass-btn live">
-                                <i class="fa fa-external-link"></i>Live Demo
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3, 1">
-                        <div class="content-image">
-                            <a href="images/portfolio6.jpg" class="portfolio-popup">
-                                <img src="images/portfolio6.jpg" alt="">
-                                <div class="image-overlay"></div>
-                                <div class="portfolio-caption">
-                                    <div class="title">
-                                        <h4>Two Feet of Two Ferns</h4>
-                                    </div>
-                                    <div class="subtitle">
-                                        <span>Graphic Design</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="project-links">
-                            <a href="#"  class="glass-btn"><i class="fa fa-github"></i>View Code</a>
-                            <a href="#"  class="glass-btn live">
-                                <i class="fa fa-external-link"></i>Live Demo
-                            </a>
-                        </div>
+                                <a href="https://github.com/abhisheknishad23/traffic-congestion-detector" target="_blank" class="glass-btn github" title="View Code">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="glass-btn live" title="Live Demo">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Card 2 (Video) -->
+                <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1">
+                    <div class="content-image">
+                        <a href="images/a.mp4" class="portfolio-popup mfp-iframe">
+                            <video class="portfolio-video" autoplay muted loop playsinline>
+                                <source src="images/a.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-caption">
+                                <h4 class="title">Green Succulent Plants</h4>
+                                <span class="subtitle">Nature Plant</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="glass-btn github" target="_blank" title="View Code">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="https://maternal-health-risk-levels.onrender.com" target="_blank" class="glass-btn live" title="Live Demo">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Video) -->
+                <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="2, 1">
+                    <div class="content-image">
+                        <a href="video/a.mp4" class="portfolio-popup mfp-iframe">
+                            <video class="portfolio-video" autoplay muted loop playsinline>
+                                <source src="video/a.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-caption">
+                                <h4 class="title">Yellow Rose Pale Plant</h4>
+                                <span class="subtitle">Flower Plant</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="glass-btn github" title="View Code">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="#" class="glass-btn live" title="Live Demo">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Video) -->
+                <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3">
+                    <div class="content-image">
+                        <a href="video/a.mp4" class="portfolio-popup mfp-iframe">
+                            <video class="portfolio-video" autoplay muted loop playsinline>
+                                <source src="video/a.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-caption">
+                                <h4 class="title">Succulent Plant in Pot</h4>
+                                <span class="subtitle">Plant House</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="glass-btn github" title="View Code">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="#" class="glass-btn live" title="Live Demo">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 (Video) -->
+                <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="1, 2">
+                    <div class="content-image">
+                        <a href="video/a.mp4" class="portfolio-popup mfp-iframe">
+                            <video class="portfolio-video" autoplay muted loop playsinline>
+                                <source src="video/a.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-caption">
+                                <h4 class="title">Photo of Green Cactus</h4>
+                                <span class="subtitle">Plant House</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="glass-btn github" title="View Code">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="#" class="glass-btn live" title="Live Demo">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 (Video) -->
+                <div class="col-md-4 col-sm-12 col-xs-12 filtr-item" data-category="3, 1">
+                    <div class="content-image">
+                        <a href="video/a.mp4" class="portfolio-popup mfp-iframe">
+                            <video class="portfolio-video" autoplay muted loop playsinline>
+                                <source src="video/a.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-caption">
+                                <h4 class="title">Two Feet of Two Ferns</h4>
+                                <span class="subtitle">Graphic Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="glass-btn github" title="View Code">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="#" class="glass-btn live" title="Live Demo">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+</div>
     <!-- end portfolio -->
 
     <!-- blog -->

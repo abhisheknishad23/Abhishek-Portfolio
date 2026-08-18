@@ -68,6 +68,16 @@ $(function() {
         });
     });
 
+    $('.portfolio-popup').magnificPopup({
+    type: 'iframe', // Video file ke liye iframe enable karein
+    iframe: {
+        markup: '<div class="mfp-iframe-scaler">'+
+                '<div class="mfp-close"></div>'+
+                '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                '</div>'
+    }
+});
+
     // navbar on scroll
     $(window).on("scroll", function() {
 

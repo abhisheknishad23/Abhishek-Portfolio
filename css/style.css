@@ -243,9 +243,9 @@ ul {
     margin-bottom: 30px;
 }
 .about .content-right {
-    background: url(../images/a.jpg);
+    background: url(../images/a.png);
     background-size: cover;
-    background-position: 100% 100%;
+    background-position: 65% 100%;
     height: 100%;
     border-radius: 0 3px 3px 0;
 }
@@ -566,58 +566,115 @@ ul {
     object-fit: cover;
     display: block;
 }
-//demo code and live
-/* IMPORTANT FIX */
-.portfolio .content-image a{
-    position:relative;
-    z-index:1;
-    display:block;
+
+/* Card Container */
+.content-image {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Sabhi video cards ka same height */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Buttons Position */
-.project-links{
-    position:absolute;
-    bottom:15px;
-    right:15px;
-    display:flex;
-    gap:8px;
-    z-index:5;
+/* Video Link Styling */
+.content-image > a.portfolio-popup {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Video background level */
 }
 
-/* Glass Buttons */
-.glass-btn{
-    width:40px;
-    height:40px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    color:black;
-    text:bold
-    font-size:10px;
-    text-decoration:none;
-    padding:6px 14px;
-    font-weight:500;
-    line-height:1;
-    border-radius:20px;
-
-    background:rgba(72, 218, 19, 0.15);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.3);
-
-    transition:0.3s;
+/* Background Loop Video Styling */
+.portfolio-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
 }
 
-.glass-btn:hover{
-    transform:scale(1.15);
-    background:rgba(255, 255, 255, 0.05);
-}
-.glass-btn i{
-    font-size:13px;
+/* Bottom Glass Overlay */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
+    /* backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); */
+    z-index: 5;
+    pointer-events: none; 
 }
 
-.glass-btn.live{
-    border:1px solid rgba(255,75,75,0.6);
+.portfolio-overlay .project-links {
+    pointer-events: auto;
+}
+
+/* Right Side Flex Alignment */
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 4px; 
+    margin-left: auto;
+}
+
+/* Glass Buttons Style */
+.glass-btn {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Smooth Circle */
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 15px;
+
+    /* Base Glass Tint */
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* GitHub Specific Tint */
+.glass-btn.github {
+    background: rgba(46, 204, 113, 0.25);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+/* Live Demo Specific Tint */
+.glass-btn.live {
+    background: rgba(231, 76, 60, 0.25);
+    border-color: rgba(231, 76, 60, 0.4);
+}
+
+/* Smooth Hover Effects */
+.glass-btn.github:hover {
+    transform: translateY(-3px) scale(1.1);
+    background: rgba(46, 204, 113, 0.85);
+    border-color: rgba(46, 204, 113, 1);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.glass-btn.live:hover {
+    transform: translateY(-3px) scale(1.1);
+    background: rgba(231, 76, 60, 0.85);
+    border-color: rgba(231, 76, 60, 1);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.glass-btn i {
+    font-size: 16px;
 }
 
 /*blog*/
