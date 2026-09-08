@@ -250,6 +250,44 @@ ul {
     border-radius: 0 3px 3px 0;
 }
 
+/* CSS for Pills */
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.pill {
+    background: rgba(255, 123, 0, 0.12);
+    border: 1px solid rgba(255, 123, 0, 0.4);
+    color: #ff7b00;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+}
+.stat-box h3 {
+    color: #ff7b00;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+.stat-box p {
+    color: #a0a0a0;
+    font-size: 12px;
+    margin: 4px 0 0 0;
+}
+
 /*resume*/
 .resume .timeline {
     position: relative;
