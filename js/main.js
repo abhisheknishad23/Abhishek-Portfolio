@@ -69,7 +69,7 @@ $(function() {
     });
 
     $('.portfolio-popup').magnificPopup({
-    type: 'iframe', // Video file ke liye iframe enable karein
+    type: 'iframe', 
     iframe: {
         markup: '<div class="mfp-iframe-scaler">'+
                 '<div class="mfp-close"></div>'+
@@ -181,7 +181,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
         try {
             //
-            const response = await fetch('http://127.0.0.1:8000/chat', {
+            const response = await fetch('https://ai-portfolio-backend-uhjm.onrender.com/chat', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json' 
@@ -200,7 +200,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
                 .replace(/---/g, '')                    //Removes horizontal dashes
                 .replace(/\n/g, '<br>');                //Converts newlines to line breaks
 
-            typingMsg.innerHTML = formattedReply; // innerText ki jagah innerHTML use karein
+            typingMsg.innerHTML = formattedReply; 
             } else {
                 typingMsg.innerText = "Sorry, I couldn't process that right now.";
             }
