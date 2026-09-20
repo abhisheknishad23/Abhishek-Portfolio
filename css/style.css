@@ -1048,8 +1048,9 @@ ul {
 }
 
 
-
-/* AI Chatbot Floating Styles */
+/* ==========================================
+   AI Chatbot Floating Styles 
+========================================== */
 #ai-chat-widget {
     position: fixed;
     bottom: 25px;
@@ -1059,31 +1060,32 @@ ul {
 }
 
 #chat-toggle-btn {
-    background: transparent; /* Full Transparent Background */
-    color: #089c0a; /* Text aur Icon color Orange */
-    border: 1px solid #089c0a; /* Subtle Orange Border */
+    background: transparent;
+    color: #089c0a;
+    border: 1px solid #089c0a;
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 123, 0, 0.15); /* Soft Glow Effect */
+    box-shadow: 0 4px 15px rgba(255, 123, 0, 0.15);
     display: flex;
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
-    backdrop-filter: blur(5px); /* Optional: Frosted Glass Effect */
+    backdrop-filter: blur(5px);
 }
 
-/* Hover Effect */
 #chat-toggle-btn:hover {
-    background: rgba(30, 255, 0, 0.15); /* Light orange shade on hover */
+    background: rgba(30, 255, 0, 0.15);
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(26, 255, 0, 0.3);
 }
 
 #chat-box {
-    width: 320px;
-    height: 420px;
+    width: 340px;
+    height: 450px;
+    max-width: 90vw;
+    max-height: 80vh;
     background: #1f1f1f;
     border: 1px solid rgba(255, 123, 0, 0.3);
     border-radius: 16px;
@@ -1120,6 +1122,7 @@ ul {
     color: #ffffff;
     cursor: pointer;
     font-size: 20px;
+    padding: 0 4px;
 }
 
 .chat-logs {
@@ -1178,4 +1181,32 @@ ul {
     cursor: pointer;
     padding: 0 8px;
     font-size: 16px;
+}
+
+/* ==========================================
+   Mobile Responsive Media Queries
+========================================== */
+@media screen and (max-width: 480px) {
+    #ai-chat-widget {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #chat-box {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        height: 75vh;
+        max-width: 100%;
+        max-height: 85vh;
+        border-radius: 16px;
+    }
+
+    #chat-toggle-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
 }

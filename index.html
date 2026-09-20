@@ -49,6 +49,7 @@
   gtag('config', 'G-9XVHNT0SP4');
 </script>
 
+
 </head>
 
 <body>
@@ -807,7 +808,26 @@
                 <p>Thank You for visit my portfolio</p>
             </div>
         </div>
+        
+        <!-- Floating AI Chatbot Widget -->
+<div id="ai-chat-widget">
+    <button id="chat-toggle-btn"><i class="fa-solid fa-robot"></i> Ask Me</button>
+    <div id="chat-box" class="chat-box-hidden">
+        <div class="chat-header">
+            <h4><i class="fa-solid fa-brain"></i> Abhishek's AI Assistant</h4>
+            <span id="chat-close-btn">&times;</span>
+        </div>
+        <div id="chat-logs" class="chat-logs">
+            <div class="msg ai-msg">Hi! I am Abhishek's AI assistant. you can ask me whatever you want?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
+            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
     </div>
+</div>
+
+
     <!-- end footer -->
 
     <script src="js/jquery.min.js"></script>
@@ -820,6 +840,7 @@
     <script src="js/contact-form.js"></script>
     <script src="js/main.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+     
     <script>
     particlesJS("particles-js", {
       particles: {
@@ -858,136 +879,8 @@
   <!-- SweetAlert2 CDN Library for Modern Popups -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script>
-document.getElementById('contact-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Default redirect roko
 
-    const form = event.target;
-    const submitBtn = document.getElementById('submit');
-    const originalBtnText = submitBtn.innerText;
 
-    // Button state update karein
-    submitBtn.innerText = "Sending...";
-    submitBtn.disabled = true;
-
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            // Success Popup Display
-            Swal.fire({
-                icon: 'success',
-                title: 'Message Sent!',
-                text: 'Thank you for reaching out. I will get back to you soon.',
-                confirmButtonColor: '#ff7b00',
-                background: '#1f1f1f',
-                color: '#ffffff'
-            });
-
-            form.reset(); // Form clear kar dega
-        } else {
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        // Error Popup Display
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong! Please try again later.',
-            confirmButtonColor: '#d33',
-            background: '#1f1f1f',
-            color: '#ffffff'
-        });
-    } finally {
-        submitBtn.innerText = originalBtnText;
-        submitBtn.disabled = false;
-    }
-});
-</script>
-
-<!-- Floating AI Chatbot Widget -->
-<div id="ai-chat-widget">
-    <button id="chat-toggle-btn"><i class="fa-solid fa-robot"></i> Ask AI</button>
-    <div id="chat-box" class="chat-box-hidden">
-        <div class="chat-header">
-            <h4><i class="fa-solid fa-brain"></i> Abhishek's AI Assistant</h4>
-            <span id="chat-close-btn">&times;</span>
-        </div>
-        <div id="chat-logs" class="chat-logs">
-            <div class="msg ai-msg">Hi! I am Abhishek's AI assistant. you can ask me whatever you want?</div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
-            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-    </div>
-</div>
-
-<script>
-    const chatBox = document.getElementById('chat-box');
-    const toggleBtn = document.getElementById('chat-toggle-btn');
-    const closeBtn = document.getElementById('chat-close-btn');
-    const sendBtn = document.getElementById('send-btn');
-    const userInput = document.getElementById('user-input');
-    const chatLogs = document.getElementById('chat-logs');
-
-    // Toggle Chat Window Open/Close
-    toggleBtn.addEventListener('click', () => chatBox.classList.toggle('chat-box-hidden'));
-    closeBtn.addEventListener('click', () => chatBox.classList.add('chat-box-hidden'));
-
-    async function sendMessage() {
-        const text = userInput.value.trim();
-        if (!text) return;
-
-        // User Message Display 
-        chatLogs.innerHTML += `<div class="msg user-msg">${text}</div>`;
-        userInput.value = '';
-        chatLogs.scrollTop = chatLogs.scrollHeight;
-
-        // AI Thinking Indicator Append 
-        const typingMsg = document.createElement('div');
-        typingMsg.className = 'msg ai-msg';
-        typingMsg.innerText = 'Thinking...';
-        chatLogs.appendChild(typingMsg);
-        chatLogs.scrollTop = chatLogs.scrollHeight;
-
-        try {
-            //
-            const response = await fetch('https://YOUR-RENDER-API-URL.onrender.com/chat', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json' 
-                },
-                body: JSON.stringify({ message: text })
-            });
-
-            const data = await response.json();
-            
-            if (data.reply) {
-                typingMsg.innerText = data.reply;
-            } else {
-                typingMsg.innerText = "Sorry, I couldn't process that right now.";
-            }
-
-        } catch (err) {
-            console.error(err);
-            typingMsg.innerText = "Abhishek is a Full-Stack AI & ML Engineer with expertise in Python, PyTorch, FastAPI, LLMs, and Computer Vision!";
-        }
-
-        chatLogs.scrollTop = chatLogs.scrollHeight;
-    }
-
-    sendBtn.addEventListener('click', sendMessage);
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
-    });
-</script>
 
 
 
