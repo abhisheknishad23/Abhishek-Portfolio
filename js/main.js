@@ -221,4 +221,58 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
 
 
+//interactive section for services
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    const animationDuration = 10000; //  slow counting
+    const restartDelay = 5000;      // after 5 Seconds restart
 
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / animationDuration, 1);
+            
+            // Smooth Ease-Out formula
+            const easeOutProgress = 1 - Math.pow(1 - progress, 4);
+            const currentCount = Math.floor(easeOutProgress * target);
+
+            // Text update with suffix
+            if (target === 95) {
+                counter.innerText = currentCount + '%+';
+            } else {
+                counter.innerText = currentCount + '+';
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                // Final value set
+                counter.innerText = (target === 95) ? target + '%+' : target + '+';
+
+                // after 5 Seconds pause 
+                setTimeout(() => {
+                    counter.innerText = '0';
+                    animateCounter(counter);
+                }, restartDelay);
+            }
+        };
+
+        requestAnimationFrame(updateCount);
+    };
+
+    // Intersection Observer to start animation when visible on screen
+    const observerOptions = { threshold: 0.3 };
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target); // Initial trigger
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => counterObserver.observe(counter));
+});
